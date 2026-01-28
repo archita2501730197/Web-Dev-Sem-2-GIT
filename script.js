@@ -127,4 +127,45 @@ console.log("Helllo students!!")
 // setTimeout(()=> {console.log("after 2 seconds")},2000);
 // console.log("second line")
 
+// const timerId=setInterval(()=>{               //lec-10
+//     console.log("After 3 sec")
+// },1000)
+// console.log(timerId)
+// setTimeout(()=>{
+//     clearInterval(timerId)
+// },10*1000)
 
+// let count=1
+// const timerId=setInterval(()=>{
+//     if(count===10)clearInterval(timerId)
+//         console.log(count)
+//     count+=1
+// },1000)
+
+// console.log("before")
+// setTimeout(()=>{
+//     console.log("inside")
+// },0)
+// console.log("after")
+
+const name=document.querySelector("#name")              //lec-11
+const btn=document.querySelector(".btn")
+const list=document.querySelector(".list")
+
+btn.addEventListener('click',()=>{
+    if(name.value==="")return
+    const li=document.createElement('li')         //creating
+    const dlt=document.createElement('button')
+
+    dlt.innerText="Delete"                        //providing text
+    li.innerText=name.value;
+
+    dlt.addEventListener('click',()=>{
+        list.removeChild(li)
+    })
+
+    list.appendChild(li)                          //appending
+    li.appendChild(dlt)
+
+    name.value=""               //empty the box after submission
+})
