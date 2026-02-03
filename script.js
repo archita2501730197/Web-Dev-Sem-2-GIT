@@ -1,5 +1,5 @@
 
-console.log("Helllo students!!")
+// console.log("Helllo students!!")
 
 // let obj={
 //     name:"Alex",
@@ -216,3 +216,28 @@ console.log("Helllo students!!")
 //         goToPlayground();
 //     })
 // })
+
+// const p=new Promise((resolve,reject)=>{                      //Lecture-12
+//     resolve("Promise resolved")
+// })
+
+const q=new Promise((res,rej)=>{  
+    let done=true
+    setTimeout(()=>{
+        if(done){
+            res("Work is done")
+        }else{
+             rej("Work is not done")
+        }
+    },5000)               
+})
+console.log(q)
+
+package.then((msg)=>{
+    console.log(msg)
+}).catch((err)=>{
+    console.log(err)
+}).finally(()=>{
+    console.log("Always run both in res and rej")
+})
+
