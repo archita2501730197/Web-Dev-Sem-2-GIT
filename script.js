@@ -148,24 +148,71 @@ console.log("Helllo students!!")
 // },0)
 // console.log("after")
 
-const name=document.querySelector("#name")              //lec-11
-const btn=document.querySelector(".btn")
-const list=document.querySelector(".list")
+// const name=document.querySelector("#name")              //lec-11
+// const btn=document.querySelector(".btn")
+// const list=document.querySelector(".list")
 
-btn.addEventListener('click',()=>{
-    if(name.value==="")return
-    const li=document.createElement('li')         //creating
-    const dlt=document.createElement('button')
+// btn.addEventListener('click',()=>{
+//     if(name.value==="")return
+//     const li=document.createElement('li')         //creating
+//     const dlt=document.createElement('button')
 
-    dlt.innerText="Delete"                        //providing text
-    li.innerText=name.value;
+//     dlt.innerText="Delete"                        //providing text
+//     li.innerText=name.value;
 
-    dlt.addEventListener('click',()=>{
-        list.removeChild(li)
-    })
+//     dlt.addEventListener('click',()=>{
+//         list.removeChild(li)
+//     })
 
-    list.appendChild(li)                          //appending
-    li.appendChild(dlt)
+//     list.appendChild(li)                          //appending
+//     li.appendChild(dlt)
 
-    name.value=""               //empty the box after submission
-})
+//     name.value=""               //empty the box after submission
+// })
+
+// function greet(){                              //CALLBACKS
+//     console.log("Hello!!")
+// }     
+// function print(sample,num){            //higher order function(accept other function as arguement)                      
+//     sample()
+//     console.log("Total is",num)
+// }            
+// print(greet,45)
+
+// console.log("Starting Homework");                 //Callback Hell
+// setTimeout(() => {
+//     console.log("Homework Done");
+//     console.log("Starting dinner");
+
+//     setTimeout(() => {
+//     console.log("Dinner done");
+//     console.log("Getting ready to go out");
+
+// setTimeout(() => {
+//     console.log("Going to playground");
+// },1000);
+//     },1500);
+// },2000)
+
+// function finishHomework(callback){                  //Handling Callback Hell
+//     console.log("Starting Homework");
+//     setTimeout(() => {
+//         console.log("Homework done");
+//         callback();
+//     },2000);
+// }
+// function eatdinner(callback){
+//     console.log("Starting dinner");
+//     setTimeout(() => {
+//         console.log("Dinner done");
+//         callback();
+//     },1500);
+// }
+// function goToPlayground(){
+//     console.log("Going to playground");
+// }
+// finishHomework(() => {
+//     eatdinner(() => {
+//         goToPlayground();
+//     })
+// })
