@@ -221,6 +221,65 @@
 //     resolve("Promise resolved")
 // })
 
+//4-Feb lecture-13/14
+
+// function doHomework(){
+//     const p=new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             let done=true
+//             if(done){
+//                 console.log("Homework is done")
+//                 resolve("Homework is done")
+//         }else{
+//             reject("Homework is not done")
+//         }
+//         },2000)
+//     })
+//     return p
+// }
+// function eatDinner(){
+//     const p=new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             let done=true
+//             if(done){
+//                 console.log("Dinner is done")
+//                 resolve("Dinner is done")
+//         }else{
+//             reject("Dinner is not done")
+//         }
+//         },2000)
+//     })
+//     return p
+// }
+// function gotoPlayground(){
+//     const p=new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             let done=true
+//             if(done){
+//                 console.log("went to Playground")
+//                 resolve("Playground Time")
+//         }else{
+//             reject("not allowed")
+//         }
+//         },2000)
+//     })
+//     return p
+// }
+
+// doHomework().then((msg)=>{
+//     console.log(msg)
+//     return eatDinner()
+// }).then((msg)=>{
+//     console.log(msg)
+//     return gotoPlayground()
+// }).then((msg)=>{
+//     console.log(msg)
+// }).catch((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log("All tasks are done")
+// })
+
 const q=new Promise((res,rej)=>{  
     let done=true
     setTimeout(()=>{
@@ -240,4 +299,3 @@ package.then((msg)=>{
 }).finally(()=>{
     console.log("Always run both in res and rej")
 })
-
