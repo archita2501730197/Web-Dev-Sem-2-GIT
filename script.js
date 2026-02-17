@@ -280,22 +280,102 @@
 //     console.log("All tasks are done")
 // })
 
-const q=new Promise((res,rej)=>{  
-    let done=true
-    setTimeout(()=>{
-        if(done){
-            res("Work is done")
-        }else{
-             rej("Work is not done")
-        }
-    },5000)               
-})
-console.log(q)
+// const q=new Promise((res,rej)=>{  
+//     let done=true
+//     setTimeout(()=>{
+//         if(done){
+//             res("Work is done")
+//         }else{
+//              rej("Work is not done")
+//         }
+//     },5000)               
+// })
+// console.log(q)
 
-package.then((msg)=>{
-    console.log(msg)
-}).catch((err)=>{
-    console.log(err)
-}).finally(()=>{
-    console.log("Always run both in res and rej")
-})
+// package.then((msg)=>{
+//     console.log(msg)
+// }).catch((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log("Always run both in res and rej")
+// })
+
+
+//Lecture-15
+
+// function orderFood() {
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             console.log("Food is ordered");
+//             resolve("Food has been ordered");
+//         },2000);
+//     });
+// }
+// function prepareFood() {
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             console.log("Restaurant prepared Food");
+//             resolve();
+//         },2000);
+//     });
+// }
+// function deliverFood() {
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             console.log("Food is Delivered");
+//             console.log("Eating !!")
+//             resolve();
+//         },2000);
+//     });
+// }
+
+// async function order(){
+//     const data=await orderFood();
+//     console.log(data)                         //resolve is returned (string)
+//     await prepareFood();
+//     await deliverFood();
+// }
+// order()
+
+// orderFood().then((data)=>{
+//     return prepareFood()
+// }).then(()=>{
+//     return deliverFood()
+// }).then((data)=>{
+
+// }).catch((err)=>{
+//     console.log("Something went wrong")
+// })
+
+ //Lecture-16
+
+ console.log("First Line")
+ try{
+    let sample=234
+    console.log(sample)
+    console.log("Line aFter sample")
+    }catch(e){
+        console.log(e)          // e is object
+ }
+
+//khud error bnana (Custom Error)
+// let age=16
+// if(age<18){
+//     throw new Error("You are not eligible to vote")
+//     console.log("This line will not execute") 
+// }catch(e){
+//     console.warn(e)
+// }
+// console.log("Last Line")
+
+//API
+
+async function fetchData(){
+    const response=await fetch("http://dummyjson.com/products");
+    const data=await response.json()
+    console.log(data.products[0].title)
+    data.products.forEach((product)=>{
+        console.log(product.title)
+    })
+}   
+fetchData()
